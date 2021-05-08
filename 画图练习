@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+b = pd.read_csv ('GDP.csv')
+b.dropna()
+b.to_csv('GDP_new.csv')
+'''
+plt.plot(np.array(b.Year),np.array(b.CPI),linestyle='-',color='g',marker='o')
+plt.axhline(y=1)
+plt.title('Figure')
+plt.legend()
+'''
+'''
+plt.scatter(np.array(b.Kapital),np.array(b.GDP),linestyle='-',s=15,color='r',marker='*')
+plt.xlim(0,2000)
+pil.ylim(0,8000)
+plt.xlabel('Kapital')
+plt.ylabel('GDP')
+plt.title('The scatter figure of GDP and Kapital')
+'''
+'''
+plt.hist(np.array(b.KR),color='g',bins=6)
+plt.xlabel('KR')
+plt.title('frequency')
+'''
+
+#plt.hist(np.array(b.KR),color='g',bins=6,density=True)
+
+#plt.hist(np.array(b.KR),color='pink',bins=6,density=True,cumulative=True)
+#plt.title('CDF')
+
+plt.pie([5,28,35,4],labels=['150-160','150-160''160-170','170-180','180'],shadow=True,explode=[0,0.1,0,0.1],colors=['y','g','b','pink'],radius=0.8,startangle=90,autopct='%1.2f%%')
